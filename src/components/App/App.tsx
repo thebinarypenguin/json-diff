@@ -1,4 +1,4 @@
-import * as stringify from "json-stable-stringify";
+import stringify from "json-stable-stringify";
 import { DiffEditor } from "@monaco-editor/react";
 
 // types
@@ -97,25 +97,37 @@ const App = () => {
       )}
 
       {mode === "result" && (
-        <div className="row">
-          <div className="left jsonEditor">
-          {/* background color #1e1e1e */}
-            <DiffEditor
-              height="50vh"
-              language="json"
-              theme="vs-dark"
-              options={{
-                // lineNumbers: 'off'
-                minimap: {
-                  enabled: false,
-                },
-                scrollBeyondLastLine: false,
-              }}
-              original={leftJson}
-              modified={rightJson}
-            />
+        <>
+          <div className="row">
+            <div className="middle">
+              <button onClick={() => {
+                setLeftJson('');
+                setRightJson('');
+                setMode("input");
+              }}>Reset</button>
+            </div>
           </div>
-        </div>
+
+          <div className="row">
+            <div className="left jsonEditor">
+              {/* background color #1e1e1e */}
+              <DiffEditor
+                height="70vh"
+                language="json"
+                theme="vs-dark"
+                options={{
+                  // lineNumbers: 'off'
+                  minimap: {
+                    enabled: false,
+                  },
+                  scrollBeyondLastLine: false,
+                }}
+                original={leftJson}
+                modified={rightJson}
+              />
+            </div>
+          </div>
+        </>
       )}
     </>
   );

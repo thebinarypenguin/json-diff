@@ -10,3 +10,7 @@
 .left, .right {
     flex-grow: 1;
 }
+
+.middle button {
+    margin-bottom: 2em;
+}
