@@ -1,0 +1,12 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2rem;
+}
+
+.left, .right {
+    flex-grow: 1;
+}
