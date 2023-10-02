@@ -1,5 +1,5 @@
 import * as stringify from "json-stable-stringify";
-import Editor, { DiffEditor } from "@monaco-editor/react";
+import { DiffEditor } from "@monaco-editor/react";
 
 // types
 import { editor } from "monaco-editor";
